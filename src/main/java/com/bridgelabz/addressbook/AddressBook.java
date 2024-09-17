@@ -117,4 +117,18 @@ public class AddressBook {
         }
         return flag == 1;
     }
+
+    public boolean deleteContactDetails(String name) {
+        int flag = 0;
+        for(Contacts contact: contactList)
+        {
+            if(contact.getFirstname().equals(name))
+            {
+                contactList.remove(contact);
+                flag = 1;
+                break;
+            }
+        }
+        return flag == 1;
+    }
 }

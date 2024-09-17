@@ -90,14 +90,14 @@ public class Contacts {
     @Override
     public String toString() {
         return "Contact details { " +
-                "firstName='" + firstname + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip='" + zip + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "firstName : '" + firstname + '\'' +
+                ", lastName : '" + lastName + '\'' +
+                ", address : '" + address + '\'' +
+                ", city : '" + city + '\'' +
+                ", state : '" + state + '\'' +
+                ", zip : '" + zip + '\'' +
+                ", email : '" + email + '\'' +
+                ", phoneNumber : '" + phoneNumber + '\'' +
                 '}';
     }
 }

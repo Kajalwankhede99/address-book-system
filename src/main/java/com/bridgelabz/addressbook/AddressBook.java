@@ -13,6 +13,10 @@ public class AddressBook {
         System.out.println("Enter the contact details: ");
         System.out.println("Enter the first name:");
         String firstName = sc.next();
+        if (isUniqueName(firstName)) {
+            System.out.println("Name already exists.");
+            return;
+        }
         System.out.println("Enter the last name:");
         String lastName = sc.next();
         System.out.println("Enter the address:");
@@ -29,6 +33,7 @@ public class AddressBook {
         String email = sc.next();
 
         contactList.add(new Contacts(firstName, lastName, address, city, state, zip, email, phoneNumber));
+        System.out.println("Contact Details added successfully !!!!");
 
         for (Contacts contact : contactList) {
             System.out.println("First name: " + contact.getFirstname() + "\n" +
@@ -41,6 +46,15 @@ public class AddressBook {
                     "Zip: " + contact.getZip());
         }
 
+    }
+
+    public boolean isUniqueName(String firstName) {
+        for (Contacts contact : contactList) {
+            if (contact.getFirstname().equalsIgnoreCase(firstName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void displayDetails()

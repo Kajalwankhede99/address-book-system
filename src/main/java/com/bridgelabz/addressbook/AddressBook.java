@@ -7,7 +7,7 @@ public class AddressBook {
 
     public static Scanner sc = new Scanner(System.in);
 
-    public ArrayList<Contacts> contactList = new ArrayList<>();
+    public ArrayList<Contacts> contactList = new ArrayList<Contacts>();
 
     public void addContact() {
         System.out.println("Enter the contact details: ");
@@ -28,8 +28,8 @@ public class AddressBook {
         System.out.println("Enter the email:");
         String email = sc.next();
 
-        Contacts contactDetails = new Contacts(firstName, lastName, address, city, state, zip, email, phoneNumber);
-        contactList.add(contactDetails);
+        contactList.add(new Contacts(firstName, lastName, address, city, state, zip, email, phoneNumber));
+
         for (Contacts contact : contactList) {
             System.out.println("First name: " + contact.getFirstname() + "\n" +
                     "Last name: " + contact.getLastName() + "\n" +
@@ -39,6 +39,22 @@ public class AddressBook {
                     "Email: " + contact.getEmail() + "\n" +
                     "Contact no: " + contact.getPhoneNumber() + "\n" +
                     "Zip: " + contact.getZip());
+        }
+
+    }
+
+    public void displayDetails()
+    {
+        if (contactList.isEmpty())
+        {
+            System.out.println("Details not Found !!!");
+        }
+        else {
+            for (Contacts contact : contactList) {
+                System.out.println(contact);
+                System.out.println("Details Display Successfully !!!!!");
+
+            }
         }
 
     }
